@@ -51,13 +51,15 @@ setupAssociations();
 export async function connectAndSyncDB() {
     try {
         await sequelize.authenticate();
-        console.log("✅ Koneksi database berhasil");
+        console.log("✅ Database connection successful");
 
         await sequelize.sync()
-        console.log("✅ Sinkronisasi model berhasil");
+        console.log("✅ Model synchronization successful");
+
 
     } catch (error) {
-        console.error("❌ Gagal menghubungkan atau menyinkronkan database:", error);
+        console.error("❌ Failed to connect or synchronize the database:", error);
+
     }
 }
 

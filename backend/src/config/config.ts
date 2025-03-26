@@ -12,14 +12,14 @@ interface DBConfig {
 const getEnvVar = (key: string, fallback?: string): string => {
   const value = process.env[key] || fallback;
   if (!value) {
-    throw new Error(`❌ Environment variable ${key} tidak ditemukan!`);
+    throw new Error(`❌ The environment variable ${key} was not found!`);
   }
   return value;
 };
 
 const development: DBConfig = {
   username: getEnvVar("DB_USER", "admin"),
-  password: process.env.DB_PASS, // Bisa undefined jika tidak diatur
+  password: process.env.DB_PASS, // Can be undefined if not set
   database: getEnvVar("DB_NAME", "dbticketing"),
   host: getEnvVar("DB_HOST", "127.0.0.1"),
   dialect: "mysql",

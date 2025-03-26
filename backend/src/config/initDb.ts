@@ -15,7 +15,7 @@ const sequelizeRoot = new Sequelize("", config.username, config.password || unde
 async function createDatabase() {
     try {
         await sequelizeRoot.query(`CREATE DATABASE IF NOT EXISTS \`${config.database}\`;`);
-        console.log(`✅ Database '${config.database}' siap!`);
+        console.log(`✅ Database '${config.database}' is ready!`);
 
         // Reconnect ke database utama
         await sequelize.authenticate();
@@ -26,7 +26,7 @@ async function createDatabase() {
 
         process.exit();
     } catch (error) {
-        console.error("❌ Gagal membuat database:", error);
+        console.error("❌ Failed to create database:", error);
         process.exit(1);
     }
 }

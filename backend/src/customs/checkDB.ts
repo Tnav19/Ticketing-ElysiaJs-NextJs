@@ -3,19 +3,19 @@ import sequelize from "../config/db";
 async function checkConnection() {
   try {
     await sequelize.authenticate();
-    console.log("✅ Database berhasil terkoneksi!");
+    console.log("✅ Database connected successfully!");
   } catch (error) {
-    console.error("❌ Gagal terkoneksi ke database:", error);
+    console.error("❌ Failed to connect to database:", error);
   }
 }
 
 // Fungsi untuk melihat semua tabel
 async function listTables() {
   try {
-    const [results] = await sequelize.query("SHOW TABLES;");
-    console.log("📋 Daftar Tabel:", results);
+    const results = await sequelize.query("SHOW TABLES");
+    console.log("📋 List of Tables:", results);
   } catch (error) {
-    console.error("❌ Gagal mengambil daftar tabel:", error);
+    console.error("❌ Failed to get list of tables:", error);
   }
 }
 

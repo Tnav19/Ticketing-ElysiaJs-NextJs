@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=your_password
+      - MYSQL_DATABASE=ticketing_db
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./dbticketing.sql:/docker-entrypoint-initdb.d/dbticketing.sql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+volumes:
+  mysql_data:
+
+networks:
+  ticketing-network:
+    driver: bridge 

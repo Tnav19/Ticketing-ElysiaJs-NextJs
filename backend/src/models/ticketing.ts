@@ -44,7 +44,7 @@ export class Ticketing extends Model<TicketingEntity> {
             model: Status,
             key: "id",
         },
-        allowNull: false, // Tidak boleh kosong
+        allowNull: false, // Cannot be empty
     }) 
     id_statuses!: number;
 
@@ -54,7 +54,7 @@ export class Ticketing extends Model<TicketingEntity> {
             model: Category,
             key: "id",
         },
-        allowNull: false, // Tidak boleh kosong
+        allowNull: false, // Cannot be empty
     }) 
     id_categories!: number;
 
@@ -64,7 +64,7 @@ export class Ticketing extends Model<TicketingEntity> {
             model: Karyawan,
             key: "id",
         },
-        allowNull: false, // Tidak boleh kosong
+        allowNull: false, // Cannot be empty
     }) 
     id_karyawans!: number;
 
@@ -74,25 +74,25 @@ export class Ticketing extends Model<TicketingEntity> {
             model: Eskalasi,
             key: "id",
         },
-        allowNull: false, // Tidak boleh kosong
+        allowNull: false, // Cannot be empty
     }) 
     id_eskalasis!: number;
 
     @Column({
         type: DataType.STRING,
-        allowNull: false, // Tidak boleh kosong
+        allowNull: false, // Cannot be empty
     })
     keluhan!: string;
 
     @Column({
         type: DataType.DATE,
-        allowNull: false, // Tidak boleh kosong
+        allowNull: false, // Cannot be empty
     })
     tanggal_keluhan!: Date;
 
     @Column({
         type: DataType.STRING,
-        allowNull: true, // Tidak boleh kosong
+        allowNull: true, // Can be empty
     })
     response!: string | null;
 

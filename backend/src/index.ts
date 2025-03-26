@@ -19,9 +19,9 @@ const app = new Elysia()
         set.headers["Access-Control-Allow-Credentials"] = "true";
         return new Response(null, { status: 204 });
     })
-  .get("/", () => "BACKEND API")
-  .use(server);
-    
+    .get('/', 'Hello Elysia')
+  .use(server)
+  .listen(5000);
     connectAndSyncDB().then(() => {
     console.log("✅ Memulai server...");
 }).catch(err => {

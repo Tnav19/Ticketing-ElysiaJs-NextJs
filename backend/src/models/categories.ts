@@ -27,14 +27,14 @@ export class Category extends Model<CategoriesEntity> {
 
     @Column({
         type: DataType.STRING,
-        allowNull: false, // Tidak boleh kosong
+        allowNull: false, // Cannot be empty
     })
     name!: string;
 
     @Column({
         type: DataType.TINYINT,
         defaultValue: 0,
-        allowNull: false, // Tidak boleh kosong
+        allowNull: false, // Cannot be empty
     })
     is_active!: number;
 
